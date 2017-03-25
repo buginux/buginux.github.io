@@ -1,0 +1,14 @@
+# Document:
+# http://simiki.org/docs/configuration.html
+
+url: http://wiki.swiftyper.com
+title: 小锅的 Wiki
+keywords: wiki, iOS, Linux, MacOS
+description: 小锅的个人 Wiki，专注于 iOS 应用
+author: 小锅
+theme: simple2
+
+deploy:
+  - type: git
+    remote: origin
+    branch: master
