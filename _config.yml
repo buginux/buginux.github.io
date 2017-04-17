@@ -8,6 +8,10 @@ description: 小锅的个人 Wiki，专注于 iOS 应用
 author: 小锅
 theme: simple2
 
+category: 
+  - name: iOS
+    label: iOS 
+
 deploy:
   - type: git
     remote: origin
