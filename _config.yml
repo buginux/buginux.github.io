@@ -11,6 +11,8 @@ theme: simple2
 category: 
   - name: iOS
     label: iOS 
+  - name: iPhone
+    label: iPhone
 
 deploy:
   - type: git
