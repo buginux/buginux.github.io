@@ -13,6 +13,14 @@ category:
     label: iOS 
   - name: iPhone
     label: iPhone
+  - name: Linux
+    label: Linux
+
+markdown:
+  - fenced_code
+  - extra
+  - codehilite(css_class=hlcode, linenum=False)
+  - toc(title=Table of Contents)
 
 deploy:
   - type: git
