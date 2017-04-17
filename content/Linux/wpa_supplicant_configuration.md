@@ -45,4 +45,8 @@ post-down killall -q wpa_supplicant
 sudo /etc/init.d/networking restart
 ```
 
+## 参考资料
+
+* [WifiDocs/WPAHowTo](https://help.ubuntu.com/community/WifiDocs/WPAHowTo)
+
 
