@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="Stylesheet" type="text/css" href="/static/css/style.css">
+    <link rel="Stylesheet" type="text/css" href="/static/css/tango.css">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <title>使用 wpa_supplicant 配置无线网络 - 小锅的 Wiki</title>
+    <meta name="keywords" content="wiki, iOS, Linux, MacOS"/>
+    <meta name="description" content="小锅的个人 Wiki，专注于 iOS 应用"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+
+  <body>
+    <div id="container">
+      
+<div id="header">
+  <div class="post-nav"><a href="/">Home</a>&nbsp;&#187;&nbsp;<a href="/#Linux">Linux</a>&nbsp;&#187;&nbsp;使用 wpa_supplicant 配置无线网络
+    <span class="updated">Updated&nbsp;
+      2017-04-17
+    </span></div>
+</div>
+<div class="clearfix"></div>
+
+<div class="page_title">使用 wpa_supplicant 配置无线网络</div>
+
+  <ul>
+<li>使用 <code>iwconfig</code> 命令查看网络接口。如果无线接口默认没有启动可以使用 <code>sudo ifup wlan0</code> 来启动接口。</li>
+<li>使用 <code>wpa_passphrase</code> 命令来获取加密后的 psk，即 wifi 密码，并记住或拷贝下来</li>
+</ul>
+<div class="hlcode"><pre><span class="nv">$ </span>wpa_passphrase &lt;your_ssid&gt; &lt;your_psk&gt;
+<span class="c"># your_ssid: 无线网络名称</span>
+<span class="c"># your_psk: 无线网络的密码</span>
+</pre></div>
+
+
+<ul>
+<li>创建一个配置文件 <code>sudo vi /etc/wpa_supplicant.conf</code></li>
+</ul>
+<div class="hlcode"><pre><span class="nv">ctrl_interface</span><span class="o">=</span>/var/run/wpa_supplicant
+<span class="c"># ap_scan=2</span>
+<span class="nv">network</span><span class="o">={</span>
+       <span class="nv">ssid</span><span class="o">=</span><span class="s2">&quot;your_ssid&quot;</span>
+       <span class="nv">scan_ssid</span><span class="o">=</span>1
+       <span class="nv">proto</span><span class="o">=</span>WPA RSN
+       <span class="nv">key_mgmt</span><span class="o">=</span>WPA-PSK
+       <span class="nv">pairwise</span><span class="o">=</span>CCMP TKIP
+       <span class="nv">group</span><span class="o">=</span>CCMP TKIP
+       <span class="nv">psk</span><span class="o">=</span>your_psk
+<span class="o">}</span>
+<span class="c"># your_psk：第二步生成的psk</span>
+</pre></div>
+
+
+<ul>
+<li>修改网络配置文件 <code>sudo vi /etc/network/interfaces</code></li>
+</ul>
+<div class="hlcode"><pre>iface wlan0 inet static
+address 192.168.0.125
+netmask 255.255.255.0
+wireless-ssid <span class="s2">&quot;essid&quot;</span>
+gateway 192.168.0.1
+
+pre-up wpa_supplicant -B -Dwext -iwlan0 -c/etc/wpa_supplicant.conf
+post-down killall -q wpa_supplicant
+</pre></div>
+
+
+<ul>
+<li>修改完成之后重新启动网络服务</li>
+</ul>
+<div class="hlcode"><pre>sudo /etc/init.d/networking restart
+</pre></div>
+    </div>
+    <div id="footer">
+      <span>
+        <p>Copyright © 2017 小锅.
+        Powered by <a href="http://simiki.org/" target="_blank">Simiki</a>.</p>
+        <p>Site Generated 2017-04-17 23:09:28</p>
+      </span>
+    </div>
+  </body>
+</html>
