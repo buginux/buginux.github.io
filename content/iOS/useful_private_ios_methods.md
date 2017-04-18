@@ -9,6 +9,10 @@ date: 2017-04-18
 * `_ivarDescription` 打印一个对象的所有实例变量
 * `_methodDescription` 打印一个对象的所有类方法与实例方法
 
+## 参考资料
+
+* [http://iosre.com/t/powerful-private-methods-for-debugging-in-cycript-lldb/3414](http://iosre.com/t/powerful-private-methods-for-debugging-in-cycript-lldb/3414)
+
 ```objc
 cy# [[UIApp keyWindow] recursiveDescription].toString()
 <iConsoleWindow: 0x156b6410; baseClass = UIWindow; frame = (0 0; 320 480); autoresize = W+H; gestureRecognizers = <NSArray: 0x156b6bc0>; layer = <UIWindowLayer: 0x156b6720>>
@@ -83,3 +87,4 @@ in NSObject:
 ...
         - (void) finalize; (0x39a49ad5)
 ```
+
