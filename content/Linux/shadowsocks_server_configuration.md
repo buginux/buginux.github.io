@@ -41,8 +41,8 @@ Mac 使用 GoAgentX。
 链接: [https://pan.baidu.com/s/1c1LoCi0](https://pan.baidu.com/s/1c1LoCi0) 密码: phsy
 
 * 本地端口：1080
-* 服务器地址：<server_ip>
+* 服务器地址：`<server_ip>`
 * 服务器端口：8388
 * 连接超时（秒）：60
-* 服务密码：<password>
+* 服务密码：`<password>`
 * 加密方式：aes-256-cfb
