@@ -6,7 +6,7 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
-    <title>设定 iPhone 自定义铃声 - 小锅的 Wiki</title>
+    <title>环境配置问题 - 小锅的 Wiki</title>
     <meta name="keywords" content="wiki, iOS, Linux, MacOS"/>
     <meta name="description" content="小锅的个人 Wiki，专注于 iOS 应用"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -16,24 +16,30 @@
     <div id="container">
       
 <div id="header">
-  <div class="post-nav"><a href="/">Home</a>&nbsp;&#187;&nbsp;<a href="/#iPhone">iPhone</a>&nbsp;&#187;&nbsp;设定 iPhone 自定义铃声
+  <div class="post-nav"><a href="/">Home</a>&nbsp;&#187;&nbsp;<a href="/#MacOS">MacOS</a>&nbsp;&#187;&nbsp;环境配置问题
     <span class="updated">Updated&nbsp;
-      2017-04-17
+      2017-04-18
     </span></div>
 </div>
 <div class="clearfix"></div>
 
-<div class="page_title">设定 iPhone 自定义铃声</div>
+<div class="page_title">环境配置问题</div>
 
-  <ol>
-<li>iTunes 打开想要设置铃声的歌曲</li>
-<li>右键 -&gt; 显示简介 -&gt; 选项 -&gt; 截取想要的片段（最多 40 秒）</li>
-<li>再次右键 -&gt; 创建 AAC 版本，然后创建好的 AAC 片段拉到桌面上</li>
-<li>将 m4a 重命名为 m4r</li>
-<li>将 iTunes 里面的 AAC 删除</li>
-<li>打开 “铃声” 选项卡，把 m4r 文件拖进去</li>
-<li>同步后在铃声设定里面就可以了</li>
-</ol>
+  <h2 id="_1">问题</h2>
+<p>Could not find function xmlCheckVersion in library libxml2</p>
+<h2 id="_2">解决办法</h2>
+<p>Homebrew doesn't link libxml and libxslt to avoid conflicts. You need to <code>--force</code> them.</p>
+<div class="hlcode"><pre>brew link libxml2 --force
+brew link libxslt --force
+</pre></div>
+
+
+<p>I faced this problem when I upgraded to latest OS X. I wrote a <a href="http://masnun.com/2015/07/14/fixing-lxml-installation-on-os-x.html">blog post</a> on it detailing the issue.</p>
+<h2 id="_3">参考资料</h2>
+<ul>
+<li><a href="http://stackoverflow.com/questions/34240287/trouble-installing-lxml-with-pip">http://stackoverflow.com/questions/34240287/trouble-installing-lxml-with-pip</a></li>
+</ul>
+<hr />
     </div>
     <div id="footer">
       <span>
