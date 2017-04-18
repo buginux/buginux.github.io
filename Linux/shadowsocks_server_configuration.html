@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="Stylesheet" type="text/css" href="/static/css/style.css">
+    <link rel="Stylesheet" type="text/css" href="/static/css/tango.css">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <title>ShadowSocks 服务端配置 - 小锅的 Wiki</title>
+    <meta name="keywords" content="wiki, iOS, Linux, MacOS"/>
+    <meta name="description" content="小锅的个人 Wiki，专注于 iOS 应用"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+
+  <body>
+    <div id="container">
+      
+<div id="header">
+  <div class="post-nav"><a href="/">Home</a>&nbsp;&#187;&nbsp;<a href="/#Linux">Linux</a>&nbsp;&#187;&nbsp;ShadowSocks 服务端配置
+    <span class="updated">Updated&nbsp;
+      2017-04-17
+    </span></div>
+</div>
+<div class="clearfix"></div>
+
+<div class="page_title">ShadowSocks 服务端配置</div>
+
+  <h2 id="shadowsocks">安装 ShadowSocks</h2>
+<p>Debian / Ubuntu:</p>
+<div class="hlcode"><pre><span class="nv">$ </span>apt-get install python-pip
+<span class="nv">$ </span>pip install shadowsocks
+</pre></div>
+
+
+<p>CentOS:</p>
+<div class="hlcode"><pre><span class="nv">$ </span>yum install python-setuptools <span class="o">&amp;&amp;</span> easy_install pip
+<span class="nv">$ </span>pip install shadowsocks
+</pre></div>
+
+
+<h2 id="_1">配置文件</h2>
+<div class="hlcode"><pre><span class="nv">$ </span>vim /etc/shadowsocks.json
+<span class="c"># {</span>
+<span class="c">#    &quot;server&quot;: &lt;server_ip&gt;,</span>
+<span class="c">#    &quot;server_port&quot;: 8388,</span>
+<span class="c">#    &quot;local_address&quot;: &quot;127.0.0.1&quot;,</span>
+<span class="c">#    &quot;local_port&quot;: 1080,</span>
+<span class="c">#    &quot;password&quot;: &lt;password&gt;,</span>
+<span class="c">#    &quot;timeout&quot;: 300,</span>
+<span class="c">#    &quot;method&quot;: &quot;aes-256-cfb&quot;,</span>
+<span class="c">#    &quot;fase_open&quot;: false</span>
+<span class="c"># }</span>
+</pre></div>
+
+
+<h2 id="_2">客户端</h2>
+<p>Mac 使用 GoAgentX。
+链接: <a href="https://pan.baidu.com/s/1c1LoCi0">https://pan.baidu.com/s/1c1LoCi0</a> 密码: phsy</p>
+<ul>
+<li>本地端口：1080</li>
+<li>服务器地址：<server_ip></li>
+<li>服务器端口：8388</li>
+<li>连接超时（秒）：60</li>
+<li>服务密码：<password></li>
+<li>加密方式：aes-256-cfb</li>
+</ul>
+    </div>
+    <div id="footer">
+      <span>
+        <p>Copyright © 2017 小锅.
+        Powered by <a href="http://simiki.org/" target="_blank">Simiki</a>.</p>
+        <p>Site Generated 2017-04-18 13:19:04</p>
+      </span>
+    </div>
+  </body>
+</html>
