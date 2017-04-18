@@ -11,10 +11,14 @@ theme: simple2
 category: 
   - name: iOS
     label: iOS 
+  - name: Xcode
+    label: Xcode
   - name: iPhone
     label: iPhone
   - name: Linux
     label: Linux
+  - name: MacOS
+    label: MacOS
 
 markdown:
   - fenced_code
