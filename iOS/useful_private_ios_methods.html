@@ -27,6 +27,10 @@
 
   <ul>
 <li><code>recursiveDescription</code> 递归打印出视图层级</li>
+<li><code>_printHierarchy</code> 打印出控制器视图层级</li>
+<li><code>_autolayoutTrace</code> 简化版的 <code>recursiveDescription</code> </li>
+<li><code>_ivarDescription</code> 打印一个对象的所有实例变量</li>
+<li><code>_methodDescription</code> 打印一个对象的所有类方法与实例方法</li>
 </ul>
 <div class="hlcode"><pre><span class="n">cy</span><span class="err">#</span> <span class="p">[[</span><span class="n">UIApp</span> <span class="n">keyWindow</span><span class="p">]</span> <span class="n">recursiveDescription</span><span class="p">].</span><span class="n">toString</span><span class="p">()</span>
 <span class="o">&lt;</span><span class="n">iConsoleWindow</span><span class="o">:</span> <span class="mh">0x156b6410</span><span class="p">;</span> <span class="n">baseClass</span> <span class="o">=</span> <span class="n">UIWindow</span><span class="p">;</span> <span class="n">frame</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span> <span class="mi">0</span><span class="p">;</span> <span class="mi">320</span> <span class="mi">480</span><span class="p">);</span> <span class="n">autoresize</span> <span class="o">=</span> <span class="n">W</span><span class="o">+</span><span class="n">H</span><span class="p">;</span> <span class="n">gestureRecognizers</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">NSArray</span><span class="o">:</span> <span class="mh">0x156b6bc0</span><span class="o">&gt;</span><span class="p">;</span> <span class="n">layer</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">UIWindowLayer</span><span class="o">:</span> <span class="mh">0x156b6720</span><span class="o">&gt;&gt;</span>
@@ -44,10 +48,6 @@
 </pre></div>
 
 
-<ul>
-<li><code>_printHierarchy</code> 打印出控制器视图层级</li>
-<li><code>_autolayoutTrace</code> 简化版的 <code>recursiveDescription</code> </li>
-</ul>
 <div class="hlcode"><pre><span class="n">cy</span><span class="err">#</span> <span class="p">[[</span><span class="n">UIApp</span> <span class="n">keyWindow</span><span class="p">]</span> <span class="n">_autolayoutTrace</span><span class="p">].</span><span class="n">toString</span><span class="p">()</span>
 <span class="o">*&lt;</span><span class="n">iConsoleWindow</span><span class="o">:</span><span class="mh">0x156b6410</span><span class="o">&gt;</span>
 <span class="o">|</span>   <span class="o">*&lt;</span><span class="n">UILayoutContainerView</span><span class="o">:</span><span class="mh">0x16258d80</span><span class="o">&gt;</span>
@@ -65,9 +65,6 @@
 </pre></div>
 
 
-<ul>
-<li><code>_ivarDescription</code> 打印一个对象的所有实例变量</li>
-</ul>
 <div class="hlcode"><pre><span class="n">cy</span><span class="err">#</span> <span class="p">[</span><span class="n">choose</span><span class="p">(</span><span class="n">SBApplication</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="n">_ivarDescription</span><span class="p">].</span><span class="n">toString</span><span class="p">()</span>
 <span class="o">&lt;</span><span class="n">SBApplication</span><span class="o">:</span> <span class="mh">0x1766cab0</span><span class="o">&gt;:</span>
 <span class="k">in</span> <span class="n">SBApplication</span><span class="o">:</span>
@@ -83,9 +80,6 @@
 </pre></div>
 
 
-<ul>
-<li><code>_methodDescription</code> 打印一个对象的所有类方法与实例方法</li>
-</ul>
 <div class="hlcode"><pre><span class="n">cy</span><span class="err">#</span> <span class="p">[</span><span class="n">choose</span><span class="p">(</span><span class="n">SBApplicationController</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="n">_methodDescription</span><span class="p">].</span><span class="n">toString</span><span class="p">()</span>
 <span class="o">&lt;</span><span class="n">SBApplicationController</span><span class="o">:</span> <span class="mh">0x17642990</span><span class="o">&gt;:</span>
 <span class="k">in</span> <span class="n">SBApplicationController</span><span class="o">:</span>
@@ -116,7 +110,7 @@
       <span>
         <p>Copyright © 2017 小锅.
         Powered by <a href="http://simiki.org/" target="_blank">Simiki</a>.</p>
-        <p>Site Generated 2017-04-18 09:20:08</p>
+        <p>Site Generated 2017-04-18 11:57:59</p>
       </span>
     </div>
   </body>
