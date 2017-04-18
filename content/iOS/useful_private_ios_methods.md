@@ -4,6 +4,10 @@ date: 2017-04-18
 ---
 
 * `recursiveDescription` 递归打印出视图层级
+* `_printHierarchy` 打印出控制器视图层级
+* `_autolayoutTrace` 简化版的 `recursiveDescription` 
+* `_ivarDescription` 打印一个对象的所有实例变量
+* `_methodDescription` 打印一个对象的所有类方法与实例方法
 
 ```objc
 cy# [[UIApp keyWindow] recursiveDescription].toString()
@@ -20,9 +24,6 @@ cy# [[UIApp keyWindow] recursiveDescription].toString()
    |    |    | <MMBadgeView: 0x16259810; baseClass = UIImageView; frame = (283 -4; 30 30); hidden = YES; opaque = NO; userInteractionEnabled = NO; layer = <CALayer: 0x162598b0>>
    |    |    |    | <MMUILabel: 0x1625a180; baseClass = UILabel; frame = (0 0; 0 0); userInteractionEnabled = NO; tag = 10032; layer = <CALayer: 0x1625a230>>
 ```
-
-* `_printHierarchy` 打印出控制器视图层级
-* `_autolayoutTrace` 简化版的 `recursiveDescription` 
 
 ```objc
 cy# [[UIApp keyWindow] _autolayoutTrace].toString()
@@ -41,8 +42,6 @@ cy# [[UIApp keyWindow] _autolayoutTrace].toString()
 |   |   |   |   <MMUILabel:0x1625a180>
 ```
 
-* `_ivarDescription` 打印一个对象的所有实例变量
-
 ```objc
 cy# [choose(SBApplication)[0] _ivarDescription].toString()
 <SBApplication: 0x1766cab0>:
@@ -57,8 +56,6 @@ in SBApplication:
 in NSObject:
     isa (Class): SBApplication
 ```
-
-* `_methodDescription` 打印一个对象的所有类方法与实例方法
 
 ```objc
 cy# [choose(SBApplicationController)[0] _methodDescription].toString()
