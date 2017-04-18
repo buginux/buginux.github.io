@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="Stylesheet" type="text/css" href="/static/css/style.css">
+    <link rel="Stylesheet" type="text/css" href="/static/css/tango.css">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <title>有用的私有方法 - 小锅的 Wiki</title>
+    <meta name="keywords" content="wiki, iOS, Linux, MacOS"/>
+    <meta name="description" content="小锅的个人 Wiki，专注于 iOS 应用"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+
+  <body>
+    <div id="container">
+      
+<div id="header">
+  <div class="post-nav"><a href="/">Home</a>&nbsp;&#187;&nbsp;<a href="/#iOS">iOS</a>&nbsp;&#187;&nbsp;有用的私有方法
+    <span class="updated">Updated&nbsp;
+      2017-04-18
+    </span></div>
+</div>
+<div class="clearfix"></div>
+
+<div class="page_title">有用的私有方法</div>
+
+  <ul>
+<li><code>recursiveDescription</code> 递归打印出视图层级</li>
+</ul>
+<div class="hlcode"><pre><span class="n">cy</span><span class="err">#</span> <span class="p">[[</span><span class="n">UIApp</span> <span class="n">keyWindow</span><span class="p">]</span> <span class="n">recursiveDescription</span><span class="p">].</span><span class="n">toString</span><span class="p">()</span>
+<span class="o">&lt;</span><span class="n">iConsoleWindow</span><span class="o">:</span> <span class="mh">0x156b6410</span><span class="p">;</span> <span class="n">baseClass</span> <span class="o">=</span> <span class="n">UIWindow</span><span class="p">;</span> <span class="n">frame</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span> <span class="mi">0</span><span class="p">;</span> <span class="mi">320</span> <span class="mi">480</span><span class="p">);</span> <span class="n">autoresize</span> <span class="o">=</span> <span class="n">W</span><span class="o">+</span><span class="n">H</span><span class="p">;</span> <span class="n">gestureRecognizers</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">NSArray</span><span class="o">:</span> <span class="mh">0x156b6bc0</span><span class="o">&gt;</span><span class="p">;</span> <span class="n">layer</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">UIWindowLayer</span><span class="o">:</span> <span class="mh">0x156b6720</span><span class="o">&gt;&gt;</span>
+   <span class="o">|</span> <span class="o">&lt;</span><span class="n">UILayoutContainerView</span><span class="o">:</span> <span class="mh">0x16258d80</span><span class="p">;</span> <span class="n">frame</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span> <span class="mi">0</span><span class="p">;</span> <span class="mi">320</span> <span class="mi">480</span><span class="p">);</span> <span class="n">autoresize</span> <span class="o">=</span> <span class="n">W</span><span class="o">+</span><span class="n">H</span><span class="p">;</span> <span class="n">layer</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">CALayer</span><span class="o">:</span> <span class="mh">0x16258e00</span><span class="o">&gt;&gt;</span>
+   <span class="o">|</span>    <span class="o">|</span> <span class="o">&lt;</span><span class="n">UITransitionView</span><span class="o">:</span> <span class="mh">0x16259610</span><span class="p">;</span> <span class="n">frame</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span> <span class="mi">0</span><span class="p">;</span> <span class="mi">320</span> <span class="mi">480</span><span class="p">);</span> <span class="n">clipsToBounds</span> <span class="o">=</span> <span class="nb">YES</span><span class="p">;</span> <span class="n">autoresize</span> <span class="o">=</span> <span class="n">W</span><span class="o">+</span><span class="n">H</span><span class="p">;</span> <span class="n">layer</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">CALayer</span><span class="o">:</span> <span class="mh">0x16259760</span><span class="o">&gt;&gt;</span>
+   <span class="o">|</span>    <span class="o">|</span>    <span class="o">|</span> <span class="o">&lt;</span><span class="n">UIViewControllerWrapperView</span><span class="o">:</span> <span class="mh">0x16243bb0</span><span class="p">;</span> <span class="n">frame</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span> <span class="mi">0</span><span class="p">;</span> <span class="mi">320</span> <span class="mi">480</span><span class="p">);</span> <span class="n">autoresize</span> <span class="o">=</span> <span class="n">W</span><span class="o">+</span><span class="n">H</span><span class="p">;</span> <span class="n">layer</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">CALayer</span><span class="o">:</span> <span class="mh">0x1625a670</span><span class="o">&gt;&gt;</span>
+   <span class="o">|</span>    <span class="o">|</span>    <span class="o">|</span>    <span class="o">|</span> <span class="o">&lt;</span><span class="n">UILayoutContainerView</span><span class="o">:</span> <span class="mh">0x1601dd70</span><span class="p">;</span> <span class="n">frame</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span> <span class="mi">0</span><span class="p">;</span> <span class="mi">320</span> <span class="mi">480</span><span class="p">);</span> <span class="n">autoresize</span> <span class="o">=</span> <span class="n">W</span><span class="o">+</span><span class="n">H</span><span class="p">;</span> <span class="n">gestureRecognizers</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">NSArray</span><span class="o">:</span> <span class="mh">0x16001650</span><span class="o">&gt;</span><span class="p">;</span> <span class="n">layer</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">CALayer</span><span class="o">:</span> <span class="mh">0x16073fe0</span><span class="o">&gt;&gt;</span>
+   <span class="o">|</span>    <span class="o">|</span>    <span class="o">|</span>    <span class="o">|</span>    <span class="o">|</span> <span class="o">&lt;</span><span class="n">UINavigationTransitionView</span><span class="o">:</span> <span class="mh">0x16004cc0</span><span class="p">;</span> <span class="n">frame</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span> <span class="mi">0</span><span class="p">;</span> <span class="mi">320</span> <span class="mi">480</span><span class="p">);</span> <span class="n">clipsToBounds</span> <span class="o">=</span> <span class="nb">YES</span><span class="p">;</span> <span class="n">autoresize</span> <span class="o">=</span> <span class="n">W</span><span class="o">+</span><span class="n">H</span><span class="p">;</span> <span class="n">layer</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">CALayer</span><span class="o">:</span> <span class="mh">0x16004e10</span><span class="o">&gt;&gt;</span>
+   <span class="o">|</span>    <span class="o">|</span>    <span class="o">|</span>    <span class="o">|</span>    <span class="o">|</span>    <span class="o">|</span> <span class="o">&lt;</span><span class="n">UIViewControllerWrapperView</span><span class="o">:</span> <span class="mh">0x1629d9a0</span><span class="p">;</span> <span class="n">frame</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span> <span class="mi">0</span><span class="p">;</span> <span class="mi">320</span> <span class="mi">480</span><span class="p">);</span> <span class="n">layer</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">CALayer</span><span class="o">:</span> <span class="mh">0x1629da10</span><span class="o">&gt;&gt;</span>
+<span class="p">...</span>
+   <span class="o">|</span>    <span class="o">|</span>    <span class="o">|</span> <span class="o">&lt;</span><span class="n">MMBadgeView</span><span class="o">:</span> <span class="mh">0x160055a0</span><span class="p">;</span> <span class="n">baseClass</span> <span class="o">=</span> <span class="n">UIImageView</span><span class="p">;</span> <span class="n">frame</span> <span class="o">=</span> <span class="p">(</span><span class="mi">203</span> <span class="mi">1</span><span class="p">;</span> <span class="mi">20</span> <span class="mi">20</span><span class="p">);</span> <span class="n">opaque</span> <span class="o">=</span> <span class="nb">NO</span><span class="p">;</span> <span class="n">userInteractionEnabled</span> <span class="o">=</span> <span class="nb">NO</span><span class="p">;</span> <span class="n">layer</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">CALayer</span><span class="o">:</span> <span class="mh">0x16005640</span><span class="o">&gt;&gt;</span>
+   <span class="o">|</span>    <span class="o">|</span>    <span class="o">|</span>    <span class="o">|</span> <span class="o">&lt;</span><span class="n">MMUILabel</span><span class="o">:</span> <span class="mh">0x16004ec0</span><span class="p">;</span> <span class="n">baseClass</span> <span class="o">=</span> <span class="n">UILabel</span><span class="p">;</span> <span class="n">frame</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span> <span class="mi">0</span><span class="p">;</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">);</span> <span class="n">hidden</span> <span class="o">=</span> <span class="nb">YES</span><span class="p">;</span> <span class="n">userInteractionEnabled</span> <span class="o">=</span> <span class="nb">NO</span><span class="p">;</span> <span class="n">tag</span> <span class="o">=</span> <span class="mi">10032</span><span class="p">;</span> <span class="n">layer</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">CALayer</span><span class="o">:</span> <span class="mh">0x16004f70</span><span class="o">&gt;&gt;</span>
+   <span class="o">|</span>    <span class="o">|</span>    <span class="o">|</span> <span class="o">&lt;</span><span class="n">MMBadgeView</span><span class="o">:</span> <span class="mh">0x16259810</span><span class="p">;</span> <span class="n">baseClass</span> <span class="o">=</span> <span class="n">UIImageView</span><span class="p">;</span> <span class="n">frame</span> <span class="o">=</span> <span class="p">(</span><span class="mi">283</span> <span class="o">-</span><span class="mi">4</span><span class="p">;</span> <span class="mi">30</span> <span class="mi">30</span><span class="p">);</span> <span class="n">hidden</span> <span class="o">=</span> <span class="nb">YES</span><span class="p">;</span> <span class="n">opaque</span> <span class="o">=</span> <span class="nb">NO</span><span class="p">;</span> <span class="n">userInteractionEnabled</span> <span class="o">=</span> <span class="nb">NO</span><span class="p">;</span> <span class="n">layer</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">CALayer</span><span class="o">:</span> <span class="mh">0x162598b0</span><span class="o">&gt;&gt;</span>
+   <span class="o">|</span>    <span class="o">|</span>    <span class="o">|</span>    <span class="o">|</span> <span class="o">&lt;</span><span class="n">MMUILabel</span><span class="o">:</span> <span class="mh">0x1625a180</span><span class="p">;</span> <span class="n">baseClass</span> <span class="o">=</span> <span class="n">UILabel</span><span class="p">;</span> <span class="n">frame</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span> <span class="mi">0</span><span class="p">;</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">);</span> <span class="n">userInteractionEnabled</span> <span class="o">=</span> <span class="nb">NO</span><span class="p">;</span> <span class="n">tag</span> <span class="o">=</span> <span class="mi">10032</span><span class="p">;</span> <span class="n">layer</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">CALayer</span><span class="o">:</span> <span class="mh">0x1625a230</span><span class="o">&gt;&gt;</span>
+</pre></div>
+
+
+<ul>
+<li><code>_printHierarchy</code> 打印出控制器视图层级</li>
+<li><code>_autolayoutTrace</code> 简化版的 <code>recursiveDescription</code> </li>
+</ul>
+<div class="hlcode"><pre><span class="n">cy</span><span class="err">#</span> <span class="p">[[</span><span class="n">UIApp</span> <span class="n">keyWindow</span><span class="p">]</span> <span class="n">_autolayoutTrace</span><span class="p">].</span><span class="n">toString</span><span class="p">()</span>
+<span class="o">*&lt;</span><span class="n">iConsoleWindow</span><span class="o">:</span><span class="mh">0x156b6410</span><span class="o">&gt;</span>
+<span class="o">|</span>   <span class="o">*&lt;</span><span class="n">UILayoutContainerView</span><span class="o">:</span><span class="mh">0x16258d80</span><span class="o">&gt;</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">*&lt;</span><span class="n">UITransitionView</span><span class="o">:</span><span class="mh">0x16259610</span><span class="o">&gt;</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">*&lt;</span><span class="n">UIViewControllerWrapperView</span><span class="o">:</span><span class="mh">0x16243bb0</span><span class="o">&gt;</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">*&lt;</span><span class="n">UILayoutContainerView</span><span class="o">:</span><span class="mh">0x1601dd70</span><span class="o">&gt;</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">*&lt;</span><span class="n">UINavigationTransitionView</span><span class="o">:</span><span class="mh">0x16004cc0</span><span class="o">&gt;</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">*&lt;</span><span class="n">UIViewControllerWrapperView</span><span class="o">:</span><span class="mh">0x1629d9a0</span><span class="o">&gt;</span>
+<span class="p">...</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">&lt;</span><span class="n">MMUILabel</span><span class="o">:</span><span class="mh">0x1624b250</span><span class="o">&gt;</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">&lt;</span><span class="n">MMBadgeView</span><span class="o">:</span><span class="mh">0x160055a0</span><span class="o">&gt;</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">&lt;</span><span class="n">MMUILabel</span><span class="o">:</span><span class="mh">0x16004ec0</span><span class="o">&gt;</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">&lt;</span><span class="n">MMBadgeView</span><span class="o">:</span><span class="mh">0x16259810</span><span class="o">&gt;</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">&lt;</span><span class="n">MMUILabel</span><span class="o">:</span><span class="mh">0x1625a180</span><span class="o">&gt;</span>
+</pre></div>
+
+
+<ul>
+<li><code>_ivarDescription</code> 打印一个对象的所有实例变量</li>
+</ul>
+<div class="hlcode"><pre><span class="n">cy</span><span class="err">#</span> <span class="p">[</span><span class="n">choose</span><span class="p">(</span><span class="n">SBApplication</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="n">_ivarDescription</span><span class="p">].</span><span class="n">toString</span><span class="p">()</span>
+<span class="o">&lt;</span><span class="n">SBApplication</span><span class="o">:</span> <span class="mh">0x1766cab0</span><span class="o">&gt;:</span>
+<span class="k">in</span> <span class="n">SBApplication</span><span class="o">:</span>
+    <span class="n">_bundleIdentifier</span> <span class="p">(</span><span class="n">NSString</span><span class="o">*</span><span class="p">)</span><span class="o">:</span> <span class="s">@&quot;com.apple.social.remoteui.SocialUIService&quot;</span>
+    <span class="n">_displayIdentifier</span> <span class="p">(</span><span class="n">NSString</span><span class="o">*</span><span class="p">)</span><span class="o">:</span> <span class="s">@&quot;com.apple.social.remoteui.SocialUIService&quot;</span>
+    <span class="n">_path</span> <span class="p">(</span><span class="n">NSString</span><span class="o">*</span><span class="p">)</span><span class="o">:</span> <span class="s">@&quot;/Applications/SocialUIService.app&quot;</span>
+    <span class="n">_bundleVersion</span> <span class="p">(</span><span class="n">NSString</span><span class="o">*</span><span class="p">)</span><span class="o">:</span> <span class="s">@&quot;87&quot;</span>
+    <span class="n">_defaultImageNamesByScreenType</span> <span class="p">(</span><span class="n">NSMutableDictionary</span><span class="o">*</span><span class="p">)</span><span class="o">:</span> <span class="o">&lt;</span><span class="n">__NSDictionaryM</span><span class="o">:</span> <span class="mh">0x17672a90</span><span class="o">&gt;</span>
+    <span class="n">_defaultImageNamesForOrientation</span> <span class="p">(</span><span class="n">NSDictionary</span><span class="o">*</span><span class="p">)</span><span class="o">:</span> <span class="nb">nil</span>
+<span class="p">...</span>
+<span class="k">in</span> <span class="n">NSObject</span><span class="o">:</span>
+    <span class="n">isa</span> <span class="p">(</span><span class="kt">Class</span><span class="p">)</span><span class="o">:</span> <span class="n">SBApplication</span>
+</pre></div>
+
+
+<ul>
+<li><code>_methodDescription</code> 打印一个对象的所有类方法与实例方法</li>
+</ul>
+<div class="hlcode"><pre><span class="n">cy</span><span class="err">#</span> <span class="p">[</span><span class="n">choose</span><span class="p">(</span><span class="n">SBApplicationController</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="n">_methodDescription</span><span class="p">].</span><span class="n">toString</span><span class="p">()</span>
+<span class="o">&lt;</span><span class="n">SBApplicationController</span><span class="o">:</span> <span class="mh">0x17642990</span><span class="o">&gt;:</span>
+<span class="k">in</span> <span class="n">SBApplicationController</span><span class="o">:</span>
+    <span class="kt">Class</span> <span class="n">Methods</span><span class="o">:</span>
+        <span class="o">+</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="n">setClearSystemAppSnapshotsWhenLoaded</span><span class="o">:</span><span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span><span class="n">arg1</span><span class="p">;</span> <span class="p">(</span><span class="mh">0x1b2ad1</span><span class="p">)</span>
+<span class="p">...</span>
+        <span class="o">+</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span> <span class="n">sharedInstanceIfExists</span><span class="p">;</span> <span class="p">(</span><span class="mh">0x1b2b6d</span><span class="p">)</span>
+    <span class="n">Instance</span> <span class="n">Methods</span><span class="o">:</span>
+        <span class="o">-</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span> <span class="n">setupApplication</span><span class="p">;</span> <span class="p">(</span><span class="mh">0x1b3e3d</span><span class="p">)</span>
+<span class="p">...</span>
+    <span class="o">-</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span> <span class="n">applicationWithDisplayIdentifier</span><span class="o">:</span><span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="n">arg1</span><span class="p">;</span> <span class="p">(</span><span class="mh">0x1b3d0d</span><span class="p">)</span>
+<span class="k">in</span> <span class="n">NSObject</span><span class="o">:</span>
+    <span class="kt">Class</span> <span class="n">Methods</span><span class="o">:</span>
+        <span class="o">+</span> <span class="p">(</span><span class="kt">bool</span><span class="p">)</span> <span class="n">cy</span><span class="err">\$</span><span class="n">hasImplicitProperties</span><span class="p">;</span> <span class="p">(</span><span class="mh">0xdb45d80</span><span class="p">)</span>
+<span class="p">...</span>
+        <span class="o">+</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="n">finalize</span><span class="p">;</span> <span class="p">(</span><span class="mh">0x39a49ad1</span><span class="p">)</span>
+    <span class="nl">Properties:</span>
+        <span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">)</span> <span class="kt">BOOL</span> <span class="n">isAccessibilityElement</span><span class="p">;</span>  <span class="p">(</span><span class="k">@dynamic</span> <span class="n">isAccessibilityElement</span><span class="p">;)</span>
+<span class="p">...</span>
+        <span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">)</span> <span class="kt">BOOL</span> <span class="n">shouldGroupAccessibilityChildren</span><span class="p">;</span>  <span class="p">(</span><span class="k">@dynamic</span> <span class="n">shouldGroupAccessibilityChildren</span><span class="p">;)</span>
+    <span class="n">Instance</span> <span class="n">Methods</span><span class="o">:</span>
+        <span class="o">-</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span> <span class="n">cy</span><span class="err">\$</span><span class="n">toCYON</span><span class="o">:</span><span class="p">(</span><span class="kt">bool</span><span class="p">)</span><span class="n">arg1</span> <span class="n">inSet</span><span class="o">:</span><span class="p">(</span><span class="n">set</span><span class="o">&lt;</span><span class="kt">void</span> <span class="o">*</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">less</span><span class="o">&lt;</span><span class="kt">void</span> <span class="o">*&gt;</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">allocator</span><span class="o">&lt;</span><span class="kt">void</span> <span class="o">*&gt;</span> <span class="o">&gt;*</span><span class="p">)</span><span class="n">arg2</span><span class="p">;</span> <span class="p">(</span><span class="mh">0xdb45b60</span><span class="p">)</span>
+<span class="p">...</span>
+        <span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="n">finalize</span><span class="p">;</span> <span class="p">(</span><span class="mh">0x39a49ad5</span><span class="p">)</span>
+</pre></div>
+    </div>
+    <div id="footer">
+      <span>
+        <p>Copyright © 2017 小锅.
+        Powered by <a href="http://simiki.org/" target="_blank">Simiki</a>.</p>
+        <p>Site Generated 2017-04-18 09:20:08</p>
+      </span>
+    </div>
+  </body>
+</html>
