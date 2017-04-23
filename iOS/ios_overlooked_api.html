@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="Stylesheet" type="text/css" href="/static/css/style.css">
+    <link rel="Stylesheet" type="text/css" href="/static/css/tango.css">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <title>API 拾遗 - 小锅的 Wiki</title>
+    <meta name="keywords" content="wiki, iOS, Linux, MacOS"/>
+    <meta name="description" content="小锅的个人 Wiki，专注于 iOS 应用"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+
+  <body>
+    <div id="container">
+      
+<div id="header">
+  <div class="post-nav"><a href="/">Home</a>&nbsp;&#187;&nbsp;<a href="/#iOS">iOS</a>&nbsp;&#187;&nbsp;API 拾遗
+    <span class="updated">Updated&nbsp;
+      2017-04-21
+    </span></div>
+</div>
+<div class="clearfix"></div>
+
+<div class="page_title">API 拾遗</div>
+
+  <h2 id="_1">手势共存</h2>
+<p>对于某些有互相关联的手势，如单击与双击，轻扫与长移可能会存在冲突，这时可以使用 <code>requireGestureRecognizerToFail</code> 方法。</p>
+<div class="hlcode"><pre><span class="n">UITapGestureRecognizer</span> <span class="o">*</span><span class="n">tapGR</span> <span class="o">=</span><span class="p">[[</span><span class="n">UITapGestureRecognizer</span> <span class="n">alloc</span><span class="p">]</span><span class="n">initWithTarget</span><span class="o">:</span><span class="n">self</span> <span class="n">action</span><span class="o">:</span><span class="k">@selector</span><span class="p">(</span><span class="n">handleTap</span><span class="o">:</span><span class="p">)];</span>
+<span class="p">[</span><span class="n">tapGR</span> <span class="n">setDelegate</span><span class="o">:</span><span class="n">self</span><span class="p">];</span>
+<span class="p">[</span><span class="n">tapGR</span> <span class="n">setNumberOfTapsRequired</span><span class="o">:</span><span class="mi">1</span><span class="p">];</span>
+<span class="p">[</span><span class="n">self</span> <span class="n">addGestureRecognizer</span><span class="o">:</span><span class="n">tapGR</span><span class="p">];</span>
+
+
+<span class="n">UITapGestureRecognizer</span> <span class="o">*</span><span class="n">doubleTapGR</span> <span class="o">=</span> <span class="p">[[</span><span class="n">UITapGestureRecognizer</span> <span class="n">alloc</span><span class="p">]</span><span class="n">initWithTarget</span><span class="o">:</span><span class="n">self</span> <span class="n">action</span><span class="o">:</span><span class="k">@selector</span><span class="p">(</span><span class="n">handleDoubleTap</span><span class="o">:</span><span class="p">)];</span>
+<span class="p">[</span><span class="n">doubleTapGR</span> <span class="n">setNumberOfTapsRequired</span><span class="o">:</span><span class="mi">2</span><span class="p">];</span>
+<span class="p">[</span><span class="n">self</span> <span class="n">addGestureRecognizer</span><span class="o">:</span><span class="n">doubleTapGR</span><span class="p">];</span>
+
+<span class="p">[</span><span class="n">tapGR</span> <span class="n">requireGestureRecognizerToFail</span> <span class="o">:</span> <span class="n">doubleTapGR</span><span class="p">];</span>
+</pre></div>
+
+
+<h3 id="_2">参考资料</h3>
+<ul>
+<li><a href="http://stackoverflow.com/questions/11086280/requiregesturerecognizertofail-do-not-work">http://stackoverflow.com/questions/11086280/requiregesturerecognizertofail-do-not-work</a></li>
+<li><a href="http://www.cnblogs.com/iphone520/archive/2011/10/27/2226548.html">iOS开发之手势——UIGestureRecognizer 共存</a></li>
+</ul>
+    </div>
+    <div id="footer">
+      <span>
+        <p>Copyright © 2017 小锅.
+        Powered by <a href="http://simiki.org/" target="_blank">Simiki</a>.</p>
+        <p>Site Generated 2017-04-23 12:53:20</p>
+      </span>
+    </div>
+  </body>
+</html>

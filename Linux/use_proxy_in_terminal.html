@@ -6,7 +6,7 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
-    <title>设定 iPhone 自定义铃声 - 小锅的 Wiki</title>
+    <title>在终端使用代理 - 小锅的 Wiki</title>
     <meta name="keywords" content="wiki, iOS, Linux, MacOS"/>
     <meta name="description" content="小锅的个人 Wiki，专注于 iOS 应用"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -16,24 +16,22 @@
     <div id="container">
       
 <div id="header">
-  <div class="post-nav"><a href="/">Home</a>&nbsp;&#187;&nbsp;<a href="/#iPhone">iPhone</a>&nbsp;&#187;&nbsp;设定 iPhone 自定义铃声
+  <div class="post-nav"><a href="/">Home</a>&nbsp;&#187;&nbsp;<a href="/#Linux">Linux</a>&nbsp;&#187;&nbsp;在终端使用代理
     <span class="updated">Updated&nbsp;
-      2017-04-17
+      2017-04-23
     </span></div>
 </div>
 <div class="clearfix"></div>
 
-<div class="page_title">设定 iPhone 自定义铃声</div>
+<div class="page_title">在终端使用代理</div>
 
-  <ol>
-<li>iTunes 打开想要设置铃声的歌曲</li>
-<li>右键 -&gt; 显示简介 -&gt; 选项 -&gt; 截取想要的片段（最多 40 秒）</li>
-<li>再次右键 -&gt; 创建 AAC 版本，然后创建好的 AAC 片段拉到桌面上</li>
-<li>将 m4a 重命名为 m4r</li>
-<li>将 iTunes 里面的 AAC 删除</li>
-<li>打开 “铃声” 选项卡，把 m4r 文件拖进去</li>
-<li>同步后在铃声设定里面就可以了</li>
-</ol>
+  <p>本人在 Mac 端使用的是 EurekaVPT 家的 SSLEdge，配合 GoAgentX 进行使用的。因为 SSLEdge 天然支持 http 协议，所以要在终端中使用代理相当容易：</p>
+<div class="hlcode"><pre><span class="nv">$ </span><span class="nb">export </span><span class="nv">http_proxy</span><span class="o">=</span>http://127.0.0.1:8016
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">https_proxy</span><span class="o">=</span>http://127.0.0.1:8016
+</pre></div>
+
+
+<p>为了方便起见，可以直接写入到 <code>.bashrc</code> 或者 <code>.zshrc</code> 当中。</p>
     </div>
     <div id="footer">
       <span>
