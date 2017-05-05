@@ -33,12 +33,18 @@
 <h2 id="xcode-uuid">获取 Xcode 的 UUID</h2>
 <div class="hlcode"><pre><span class="nv">$ </span>defaults <span class="nb">read</span> /Applications/Xcode.app/Contents/Info DVTPlugInCompatibilityUUID
 </pre></div>
+
+
+<h2 id="xcode">升级 Xcode 插件失效修复</h2>
+<p><code>`Bash
+$ find ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins -name Info.plist -maxdepth 3 | xargs -I{} defaults write {} DVTPlugInCompatibilityUUIDs -array-add</code>defaults read /Applications/Xcode.app/Contents/Info.plist DVTPlugInCompatibilityUUID`
+```</p>
     </div>
     <div id="footer">
       <span>
         <p>Copyright © 2017 小锅.
         Powered by <a href="http://simiki.org/" target="_blank">Simiki</a>.</p>
-        <p>Site Generated 2017-05-05 09:47:59</p>
+        <p>Site Generated 2017-05-05 10:05:12</p>
       </span>
     </div>
   </body>
