@@ -35,6 +35,13 @@ $ vim /etc/shadowsocks.json
 # }
 ```
 
+## 启动、停止
+
+```bash
+$ sudo ssserver -c /etc/shadowsocks.json --user nobody -d start
+$ sudo ssserver -d stop
+```
+
 ## 客户端
 
 Mac 使用 GoAgentX。
